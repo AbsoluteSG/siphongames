@@ -1,0 +1,44 @@
+---
+title: "Combat System Overhaul — How We Rebuilt Melee From Scratch"
+slug: "combat-system-overhaul"
+excerpt: "We threw out the entire melee system six months before launch and rebuilt it from the ground up. Here's why, and what we learned."
+heroImage: ""
+tags: ["Devlog", "Combat", "Technical"]
+featured: true
+status: "published"
+publishedAt: "2026-02-20"
+createdAt: "2026-02-20"
+updatedAt: "2026-02-20"
+---
+
+Six months before our early access window, we made a decision that cost us roughly eight weeks of work: we scrapped the entire melee combat system and rebuilt it from scratch. It was the right call. Here's the full story.
+
+## Why the Old System Failed
+
+The original combat system was built fast. We needed something playable to test the restaurant loop against, and melee was a secondary concern at the time. What we shipped internally was essentially a hitbox timer — you pressed attack, an animation played, and a damage region appeared for a fixed window.
+
+It worked. But it didn't *feel* right. Every swing had the same weight. There was no distinction between a panicked jab and a deliberate heavy strike. Playtests confirmed what we suspected: players weren't engaging with combat as a system. They were tolerating it.
+
+> "It's fine" was the most common feedback. That's a failure state for something that occupies a third of the game.
+
+## What We Changed
+
+The rebuild centred on three principles:
+
+**Commitment.** Every attack now has explicit startup, active, and recovery phases. You can cancel into a dodge during startup. You cannot cancel during recovery. Players who treat combat as a button-mashing activity will get punished. Players who learn the timing will feel powerful.
+
+**Weight variance.** Different weapon classes have fundamentally different timing profiles. A dagger has a fast startup and fast recovery but short active windows. A greatsword has a long startup, long active window, and punishing recovery. Neither is strictly better — they reward different approaches.
+
+**Stamina as a resource, not a limit.** In the old system, stamina was a ceiling. Run out, and you couldn't attack. In the new system, attacks still consume stamina, but the penalty for going to zero is a brief stagger rather than a hard lock. This keeps combat fluid while still making stamina management meaningful.
+
+## The Parry Window
+
+The parry system was the last piece and the most debated. Early builds had a generous parry window — almost a quarter second. It was too easy. A later build tightened it to 60ms, which was too unforgiving for players unfamiliar with the genre.
+
+We landed on a variable window tied to the incoming attack's weight class. Light attacks give you 90ms. Heavy attacks give you 140ms. The logic: heavier attacks are slower, more telegraphed, and should reward a well-timed parry more generously.
+
+## What's Next
+
+Combat is in a stable state, but it's not finished. We have stamina relic interactions to balance, and a few weapon classes that still feel slightly off. We're also reconsidering whether knockback values need to scale with the environment — getting knocked into a wall in a cramped kitchen should feel different than getting knocked back in an open courtyard.
+
+More on that in a future post.

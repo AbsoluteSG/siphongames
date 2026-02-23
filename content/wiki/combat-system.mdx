@@ -1,0 +1,90 @@
+---
+title: Combat System
+category: Combat
+summary: No Dogs Allowed's combat is built around stamina-gated decisions, tight parry windows, and the management of positioning in small urban spaces.
+categoryHref: /wiki
+categoryLabel: Back to Wiki
+next:
+  label: Stamina
+  href: /wiki/stamina
+related:
+  - label: Stamina
+    href: /wiki/stamina
+  - label: Status Effects
+    href: /wiki/status-effects
+  - label: Weapons
+    href: /wiki/weapons
+exploreMore:
+  - label: Weapons Tier List
+    href: /wiki/weapons
+  - label: Items
+    href: /wiki/consumables
+infobox:
+  title: Combat System
+  rows:
+    - label: Type
+      value: Real-time action
+    - label: Perspective
+      value: Third-person
+    - label: Parry window
+      value: 4 frames (base)
+    - label: Stamina pool
+      value: 100 (base)
+    - label: Hit stop
+      value: 3–8 frames
+---
+
+<WikiSection id="philosophy" title="Design Philosophy">
+
+Combat in No Dogs Allowed is designed to feel consequential without being punishing. Every encounter is survivable with correct reads. The difficulty comes from resource management across multiple engagements, not from individual exchanges.
+
+Fights are short. Mistakes are recoverable. Poor preparation over time is what kills.
+
+</WikiSection>
+
+<WikiSection id="action-loop" title="The Action Loop">
+
+The core loop is: read the telegraph → attack or parry → expend stamina → recover. Enemies have three attack types — fast, slow, and grab — each with a distinct visual tell.
+
+<WikiTable
+  headers={["Attack Type", "Telegraph", "Best Response"]}
+  rows={[
+    ["Fast", "Single flash, short windup", "Dodge sideways"],
+    ["Slow", "Double flash, long windup", "Parry"],
+    ["Grab", "Red outline, lunge", "Dodge backward"],
+  ]}
+/>
+
+</WikiSection>
+
+<WikiSection id="stamina" title="Stamina">
+
+Stamina governs every offensive and defensive action. It does not regenerate during the guard-break animation.
+
+<WikiCallout type="warning">
+  Blocking when stamina is below 25% will trigger a guard break regardless of attack type. Dodge instead.
+</WikiCallout>
+
+</WikiSection>
+
+<WikiSection id="parry" title="Parry Windows">
+
+A successful parry staggers the opponent and grants a guaranteed counter window. The base parry window is 4 frames. Certain equipment extends this to 7 frames.
+
+A parry triggers a 0.3s slowdown that scales with player timing accuracy — perfect parries extend the window further.
+
+</WikiSection>
+
+<WikiSection id="weapons" title="Weapon Classes" collapsible>
+
+<WikiTable
+  headers={["Class", "Stamina Cost", "Reach", "Best Use"]}
+  rows={[
+    ["Dagger", "Low", "Short", "Rapid combos, tight corridors"],
+    ["Baton", "Medium", "Medium", "Balanced — recommended for new players"],
+    ["Greatsword", "High", "Long", "High damage, open spaces"],
+    ["Staff", "Low", "Ranged", "Distance, status application"],
+  ]}
+/>
+
+</WikiSection>

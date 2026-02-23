@@ -1,6 +1,8 @@
 {
-  "name": "my-game-site",
-  "version": "0.1.0",
+  "name": "no-dogs-allowed",
+  "version": "1.0.0",
+  "description": "The Siphon Games Landing Page",
+  "author": "Siphon Games",
   "private": true,
   "scripts": {
     "dev": "next dev",
